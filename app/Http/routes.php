@@ -15,11 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/view/mem/{id}',function($id){
+Route::get('/view/mem/{id}', function ($id) {
 
-	$mems = Mem::find($id);
-	return view("mem")->with('mems', $mems);
+    $mems = Mem::find($id);
+
+    return view('mem')->with('mems', $mems);
 });
-
-
-

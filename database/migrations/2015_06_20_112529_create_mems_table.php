@@ -19,7 +19,7 @@ class CreateMemsTable extends Migration
             $table->text('img_path');
             $table->integer('plus');
             $table->integer('minus');
-            $table->enum('approved','yes','no');
+            $table->enum('approved',['yes','no']);
             $table->timestamps();
         });
     }

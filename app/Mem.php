@@ -59,4 +59,9 @@ class Mem extends Model
             }
         }
     }
+
+    public function rateUp()
+    {
+        
+    }
 }

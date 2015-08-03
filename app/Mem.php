@@ -60,8 +60,13 @@ class Mem extends Model
         }
     }
 
-    public function rateUp()
+    public function rateUp($id)
     {
-        
+        DB::update("UPDATE mems SET plus = plus + 1 WHERE id = ?",[$id]);
+    }
+
+    public function rateDown($id)
+    {
+        DB::update("UPDATE mems SET minus = minus - 1 WHERE id = ?",[$id]);
     }
 }

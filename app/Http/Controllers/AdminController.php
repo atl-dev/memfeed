@@ -25,7 +25,7 @@ class AdminController extends Controller
      **/
     public function manageMems()
     {
-        $mems = Mem::all()->where('approved', 'no');
+        $mems = App\Mem::all()->where('approved', 'no');
 
         return view('manage_mems', ['mems' => $mems]);
     }
@@ -50,7 +50,7 @@ class AdminController extends Controller
      **/
     public function approveComment($id)
     {
-        $comment = new \App\Comment();
+        $comment = new App\Comment();
         $comment->approve($id);
         return Redirect::to('/manage/comments');
     }
@@ -64,7 +64,7 @@ class AdminController extends Controller
      **/
     public function approveMem($id)
     {
-        $mem = new \App\Mem();
+        $mem = new App\Mem();
         $mem->approve($id);
         return Redirect::to('/manage/mems');
     }

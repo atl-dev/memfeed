@@ -62,7 +62,7 @@ class Mem extends Model
      * @return Query object
      * @param Query object
      **/
-    public function scopeUnApproved($query)
+    public function scopeUnapproved($query)
     {
         return $query->where('approved','no');
     }
@@ -110,21 +110,49 @@ class Mem extends Model
             }
         }
     }
-
+ 
+    /**
+     * Returns inapproved mems for anteroom
+     *
+     * @return void
+     *  
+     **/
     public function getUnApproved()
     {
-        return Mem::all()->UnApproved()->ReversedOrder();
+        return Mem::all()->where('approved','no')->orderBy('id','desc')->get();
     }
+
+    /**
+     * Returns main feed with approved and newest mems
+     *
+     * @return Object
+     * 
+     **/
     public function getFeed()
     {
-        return Mem::all()->ReversedOrder()->approved();
+        return Mem::all()->where('approved','yes')->orderBy('id','desc')->get();
     }
+
+    /**
+     * Returns approved and most popular Mems
+     *
+     * @return Object
+     *  
+     **/
+    
     public function getTop()
     {
         
         return Mem::Popular()->Approved()->get();
     }
 
+    /**
+     * Increese positive rate
+     *
+     * @return void
+     * @param Int 
+     **/
+    
     public function rateUp($id)
     {
        $mem = Mem::find($id);
@@ -133,6 +161,13 @@ class Mem extends Model
        $mem->save();
     }
 
+    /**
+     * Increments negative rate
+     *
+     * @return void
+     * @param Int 
+     **/
+    
     public function rateDown($id)
     {
        $mem = Mem::find($id);
@@ -142,10 +177,10 @@ class Mem extends Model
     }
 
     /**
-     * undocumented function
+     * Delete Mem 
      *
      * @return void
-     * @author 
+     * @param  Int 
      **/
     public function remove($id)
     {

@@ -7,9 +7,22 @@ use Input;
 
 class Mem extends Model
 {
-    protected $table = 'mems';
     /**
-     * Scope for reversed fetching data by id.
+     * Fields that are fillable in database
+     *
+     * @var Array
+     **/
+    protected $fillable = ['plus','name','img_path'];
+    
+    /**
+     * Table name in database
+     *
+     * @var string
+     **/
+    protected $table = 'mems';
+    
+    /**
+     * Scope for reversed fetching data by id.Whoops
      *
      * @return Query object
      *
@@ -18,6 +31,18 @@ class Mem extends Model
     public function scopeReverseOrder($query)
     {
         return $query->orderBy('id', 'desc');
+    }
+
+    /**
+     * Scope for popular objects
+     *
+     * @return Query object
+     *
+     * @param Query
+     **/
+    public function scopePopular($query)
+    {
+        return $query->orderBy('plus','desc');
     }
 
     /**
@@ -60,13 +85,26 @@ class Mem extends Model
         }
     }
 
+
+    public function getTop()
+    {
+        
+        return Mem::popular()->get();
+    }
+
     public function rateUp($id)
     {
-        DB::update("UPDATE mems SET plus = plus + 1 WHERE id = ?",[$id]);
+       $mem = Mem::find($id);
+       $mem->plus = intval($mam->plus,10);
+       $mem->plus += 1;
+       $mem->save();
     }
 
     public function rateDown($id)
     {
-        DB::update("UPDATE mems SET minus = minus - 1 WHERE id = ?",[$id]);
+       $mem = Mem::find($id);
+       $mem->minus = intval($mam->minus,10);
+       $mem->minus += 1;
+       $mem->save();
     }
 }

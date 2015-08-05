@@ -6,8 +6,8 @@
 <body>
 
     @include('header')
-    @include('content')
-    @include('footer')
+    {{--@include('content')--}}
+    {{--@include('footer')--}}
 
 </body>
 </html>

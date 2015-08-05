@@ -17,9 +17,12 @@ Route::controllers([
 ]);
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index')->with('active','home');
 });
-
+Route::get('/top',function(){
+    $mems = new App\Mem();
+    return view('index',['active' => 'top','mems' => $mems->getTop()]);
+});
 Route::get('/view/mem/{id}', function ($id) {
 
     $mems = Mem::find($id);

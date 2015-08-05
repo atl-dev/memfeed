@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" type="text/css" href="bootstrap/theme.min.css">
+<link rel="stylesheet" type="text/css" href="/bootstrap/theme.min.css">
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

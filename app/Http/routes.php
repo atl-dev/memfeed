@@ -37,6 +37,8 @@ Route::get('/mem/negative/{id}',function($id) {
 });
 
 
+Route::get('/admin','AdminController@index');
+
 Route::get('/manage/comments','AdminController@manageComments');
 Route::get('/manage/mems','AdminController@manageMems');
 Route::get('/approve/mem/{id}','AdminController@approveMem');

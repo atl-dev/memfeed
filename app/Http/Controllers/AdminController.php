@@ -17,6 +17,12 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
 
+    public function index()
+    {
+
+    }
+
+
     /**
      * Returns View with list of unapproved mems
      *

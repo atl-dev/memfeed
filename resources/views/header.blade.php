@@ -10,11 +10,7 @@ camelCase - ids in HTML  , variables in php ;
  * Time: 14:16
  */
 
-$localAdress = "http://patrykjanik.cba.pl/projects/memfeed/home.php";
-$afterRoom = "http://patrykjanik.cba.pl/projects/memfeed/afterRoom.php";
-$top = "http://patrykjanik.cba.pl/projects/memfeed/afterRoom.php";
-
-$active = "home";
+//$ACTIVE is needed to be set by php depends on current route
 //home, afterRoom, top;
 
  ?>
@@ -36,15 +32,15 @@ $active = "home";
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand logo" href="<?php echo $localAdress; ?>">MEMFEED.PL</a>
+            <a class="navbar-brand logo" href="/">MEMFEED.PL</a>
         </div>
 
         <!--TODO-note Why there are ~myNavbar~ id ? -->
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active" id="home"><a href="<?php echo $localAdress; ?>">Home</a></li>
-                <li id="afterRoom"><a href="<?php echo $afterRoom; ?>">Anteroom</a></li>
-                <li id="top"><a href="<?php echo $top; ?>">Top</a></li>
+                <li class="active" id="home"><a href="/">Home</a></li>
+                <li id="afterRoom"><a href="/afterroom">Anteroom</a></li>
+                <li id="top"><a href="/top">Top</a></li>
             </ul>
             <!--Search area -->
             <ul class="nav navbar-nav navbar-right">

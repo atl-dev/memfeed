@@ -23,6 +23,11 @@ Route::get('/top',function(){
     $mems = new App\Mem();
     return view('index',['active' => 'top','mems' => $mems->getTop()]);
 });
+
+Route::get('/anteroom',function(){
+	$mems = new App\Mem();
+	return view('index',['active' => 'anteroom','mems' => $mems->getUnApproved()]);
+})
 Route::get('/view/mem/{id}', function ($id) {
 
     $mems = Mem::find($id);

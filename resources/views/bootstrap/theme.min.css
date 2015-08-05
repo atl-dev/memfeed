@@ -1031,8 +1031,8 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 .navbar-default .btn-link:focus,.navbar-default .btn-link:hover{color:#333}
 .navbar-default .btn-link[disabled]:focus,.navbar-default .btn-link[disabled]:hover,fieldset[disabled] .navbar-default .btn-link:focus,fieldset[disabled] .navbar-default .btn-link:hover{color:#ccc}
 .navbar-inverse{background-color:#222;border-color:#fffd53}
-.navbar-inverse .navbar-brand{color:#fffd53}
-.navbar-inverse .navbar-brand:focus,.navbar-inverse .navbar-brand:hover{color:#fff;background-color:transparent}
+.navbar-inverse .navbar-brand{color:#eee}
+.navbar-inverse .navbar-brand:focus,.navbar-inverse .navbar-brand:hover{color:#fffd53;background-color:transparent}
 .navbar-inverse .navbar-nav>li>a,.navbar-inverse .navbar-text{color:#fffd53}
 .navbar-inverse .navbar-nav>li>a:focus,.navbar-inverse .navbar-nav>li>a:hover{color:#eee;background-color:#333}
 .navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.active>a:focus,.navbar-inverse .navbar-nav>.active>a:hover{color:#222;background-color:#fffd53}

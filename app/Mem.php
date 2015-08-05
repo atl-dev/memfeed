@@ -12,7 +12,7 @@ class Mem extends Model
      *
      * @var Array
      **/
-    protected $fillable = ['plus','name','img_path'];
+    protected $fillable = ['plus','title','img_path','plus','minus','approved'];
     
     /**
      * Table name in database
@@ -46,6 +46,17 @@ class Mem extends Model
     }
 
     /**
+     * Scope to filter if mem is approved 
+     *
+     * @return Query object
+     * 
+     **/
+    public function scopeApproved($query)
+    {
+        return $query->where('approved','yes');
+    }
+
+    /**
      * Creates relation.
      *
      * @return Relation
@@ -54,6 +65,8 @@ class Mem extends Model
     {
         return $this->hasMany('App\Comment');
     }
+
+
     /**
      * Change status of mem to approved.
      *
@@ -61,7 +74,9 @@ class Mem extends Model
      **/
     public function approve($id)
     {
-        \DB::update("UPDATE mems SET approved='yes' WHERE id = ?", [$id]);
+        $mem = Mem::find($id);
+        $mem->approved = 'yes';
+        $mem->save();
     }
 
     /**
@@ -85,11 +100,14 @@ class Mem extends Model
         }
     }
 
-
+    public function getFeed()
+    {
+        return Mem::all()->ReversedOrder()->approved();
+    }
     public function getTop()
     {
         
-        return Mem::popular()->get();
+        return Mem::Popular()->Approved()->get();
     }
 
     public function rateUp($id)
@@ -106,5 +124,17 @@ class Mem extends Model
        $mem->minus = intval($mam->minus,10);
        $mem->minus += 1;
        $mem->save();
+    }
+
+    /**
+     * undocumented function
+     *
+     * @return void
+     * @author 
+     **/
+    public function remove($id)
+    {
+        $mem = Mem::find($id);
+        $mem->delete();
     }
 }

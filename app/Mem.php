@@ -57,6 +57,17 @@ class Mem extends Model
     }
 
     /**
+     * Scope for unapproved mems
+     *
+     * @return Query object
+     * @param Query object
+     **/
+    public function scopeUnApproved($query)
+    {
+        return $query->where('approved','no');
+    }
+
+    /**
      * Creates relation.
      *
      * @return Relation
@@ -100,6 +111,10 @@ class Mem extends Model
         }
     }
 
+    public function getUnApproved()
+    {
+        return Mem::all()->UnApproved()->ReversedOrder();
+    }
     public function getFeed()
     {
         return Mem::all()->ReversedOrder()->approved();

@@ -119,7 +119,7 @@ class Mem extends Model
      **/
     public function getUnApproved()
     {
-        return Mem::all()->where('approved','no')->orderBy('id','desc')->get();
+        return Mem::where('approved','no')->orderBy('id','desc')->paginate(15);
     }
 
     /**
@@ -130,7 +130,7 @@ class Mem extends Model
      **/
     public function getFeed()
     {
-        return Mem::all()->where('approved','yes')->orderBy('id','desc')->get();
+        return Mem::where('approved','yes')->orderBy('id','desc')->paginate(15);
     }
 
     /**
@@ -143,7 +143,7 @@ class Mem extends Model
     public function getTop()
     {
         
-        return Mem::Popular()->Approved()->get();
+        return Mem::where('approved','yes')->orderBy('plus','desc')->paginate(15);
     }
 
     /**

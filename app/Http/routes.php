@@ -17,7 +17,11 @@ Route::controllers([
 ]);
 
 Route::get('/', function () {
-    return view('index')->with('active','home');
+	$mem = new App\Mem();
+    return view('index',[
+    		"active" => 'home',
+    		"mems" => $mem->getFeed(),
+    	]);
 });
 Route::get('/top',function(){
     $mems = new App\Mem();
@@ -27,7 +31,7 @@ Route::get('/top',function(){
 Route::get('/anteroom',function(){
 	$mems = new App\Mem();
 	return view('index',['active' => 'anteroom','mems' => $mems->getUnApproved()]);
-})
+});
 Route::get('/view/mem/{id}', function ($id) {
 
     $mems = Mem::find($id);

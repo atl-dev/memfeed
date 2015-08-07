@@ -21,51 +21,7 @@ class Mem extends Model
      **/
     protected $table = 'mems';
     
-    /**
-     * Scope for reversed fetching data by id.Whoops
-     *
-     * @return Query object
-     *
-     * @param Query
-     **/
-    public function scopeReverseOrder($query)
-    {
-        return $query->orderBy('id', 'desc');
-    }
-
-    /**
-     * Scope for popular objects
-     *
-     * @return Query object
-     *
-     * @param Query
-     **/
-    public function scopePopular($query)
-    {
-        return $query->orderBy('plus','desc');
-    }
-
-    /**
-     * Scope to filter if mem is approved 
-     *
-     * @return Query object
-     * 
-     **/
-    public function scopeApproved($query)
-    {
-        return $query->where('approved','yes');
-    }
-
-    /**
-     * Scope for unapproved mems
-     *
-     * @return Query object
-     * @param Query object
-     **/
-    public function scopeUnapproved($query)
-    {
-        return $query->where('approved','no');
-    }
+   
 
     /**
      * Creates relation.

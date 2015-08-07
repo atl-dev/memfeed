@@ -17,9 +17,17 @@ Route::controllers([
 ]);
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index')->with('active','home');
+});
+Route::get('/top',function(){
+    $mems = new App\Mem();
+    return view('index',['active' => 'top','mems' => $mems->getTop()]);
 });
 
+Route::get('/anteroom',function(){
+	$mems = new App\Mem();
+	return view('index',['active' => 'anteroom','mems' => $mems->getUnApproved()]);
+})
 Route::get('/view/mem/{id}', function ($id) {
 
     $mems = Mem::find($id);
@@ -36,6 +44,8 @@ Route::get('/mem/negative/{id}',function($id) {
     return Redirect::to("/view/mem/".$id);
 });
 
+
+Route::get('/admin','AdminController@index');
 
 Route::get('/manage/comments','AdminController@manageComments');
 Route::get('/manage/mems','AdminController@manageMems');

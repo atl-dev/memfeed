@@ -39,7 +39,7 @@ $active = "home";
             <a class="navbar-brand logo" href="<?php echo $localAdress; ?>">MEMFEED.PL</a>
         </div>
 
-        <!--TODO-note Why there are ~myNavbar~ id ? -->
+        <!--TODO-note Why there are ~myNavbar~ id ?? -->
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li class="active" id="home"><a href="<?php echo $localAdress; ?>">Home</a></li>

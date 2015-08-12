@@ -27,9 +27,9 @@ $iloscMemow = 3;
 </script>
 
 <body>
-    <?php require("header.blade.php"); ?>
-    <?php require("content.blade.php"); ?>
-    <?php require("footer.blade.php"); ?>
+    @include("header")
+    @include("content") 
+    @include("footer")
 
 </body>
 </html>

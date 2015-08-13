@@ -13,4 +13,10 @@ class Comment extends Model
     {
     	return $this->belongsTo('App\Mem');
     }
+
+
+    public function approve($id)
+    {
+    	\DB::update("UPDATE comments SET approved='yes' WHERE id = ?",[$id]);
+    }
 }

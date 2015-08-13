@@ -1,3 +1,4 @@
+
 <?php
 require("functions.php") ;
 $iloscMemow = 3;
@@ -30,6 +31,18 @@ $iloscMemow = 3;
     @include("header")
     @include("content") 
     @include("footer")
+
+<!DOCTYPE html>
+<html>
+<head>
+    @include('head');
+</head>
+<body>
+
+    @include('header')
+    {{--@include('content')--}}
+    {{--@include('footer')--}}
+
 
 </body>
 </html>

@@ -7,22 +7,34 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Mem;
+/**
+ * undocumented class
+ *
+ * @package Controllers\MemController
+ * @author Adrian Cybulski @Xeonid 
+ **/
 class MemController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Return view with all Mems
      *
-     * @return Response
+     * @return View
      */
     public function index()
     {
-        return Mem::ReverseOrder()->get();
+        return view("")->with('mems',Mem::ReverseOrder()->get());
     }
 
     
+    /**
+     * Return view with selected mem details
+     *
+     * @return View
+     * @param Integer 
+     **/
     public function viewMem($id)
     {
-        return Mem::find($id);
+        return view('')->with('mem',Mem::find($id));
     }
    
 }

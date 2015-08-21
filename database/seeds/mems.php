@@ -12,11 +12,16 @@ class mems extends Seeder
     public function run()
     {
         $faker = Faker\Factory::create();
-        for($i=0;$i<200;$i++) {
+        for($i=0;$i<2000;$i++) {
         	$mem = App\Mem::create([
         			'title' => $faker->userName,
         			'img_path' => 'http://placehold.it/600x400',
-        		]);
+        			'approved' => 'yes',
+					'plus' => '0',
+					'minus' => '0',
+					'created_at' => date("Y-m-d H:i:s"),
+					'updated_at' => date('Y-m-d H:i:s'),
+				]);
         }
     }
 }

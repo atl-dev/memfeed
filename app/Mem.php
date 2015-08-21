@@ -13,59 +13,14 @@ class Mem extends Model
      * @var Array
      **/
     protected $fillable = ['plus','title','img_path','plus','minus','approved'];
-    
+
     /**
      * Table name in database
      *
      * @var string
      **/
     protected $table = 'mems';
-    
-    /**
-     * Scope for reversed fetching data by id.Whoops
-     *
-     * @return Query object
-     *
-     * @param Query
-     **/
-    public function scopeReverseOrder($query)
-    {
-        return $query->orderBy('id', 'desc');
-    }
 
-    /**
-     * Scope for popular objects
-     *
-     * @return Query object
-     *
-     * @param Query
-     **/
-    public function scopePopular($query)
-    {
-        return $query->orderBy('plus','desc');
-    }
-
-    /**
-     * Scope to filter if mem is approved 
-     *
-     * @return Query object
-     * 
-     **/
-    public function scopeApproved($query)
-    {
-        return $query->where('approved','yes');
-    }
-
-    /**
-     * Scope for unapproved mems
-     *
-     * @return Query object
-     * @param Query object
-     **/
-    public function scopeUnApproved($query)
-    {
-        return $query->where('approved','no');
-    }
 
     /**
      * Creates relation.
@@ -113,22 +68,22 @@ class Mem extends Model
 
     public function getUnApproved()
     {
-        return Mem::all()->UnApproved()->ReversedOrder();
+        return Mem::where('approved','no')->orderBy('id','desc')->get();
     }
     public function getFeed()
     {
-        return Mem::all()->ReversedOrder()->approved();
+        return Mem::where('approved','yes')->orderBy('id','desc')->get();
     }
     public function getTop()
     {
-        
-        return Mem::Popular()->Approved()->get();
+
+        return Mem::orderBy('plus','desc')->Approved()->get();
     }
 
     public function rateUp($id)
     {
        $mem = Mem::find($id);
-       $mem->plus = intval($mam->plus,10);
+       $mem->plus = intval($mem->plus,10);
        $mem->plus += 1;
        $mem->save();
     }
@@ -136,7 +91,7 @@ class Mem extends Model
     public function rateDown($id)
     {
        $mem = Mem::find($id);
-       $mem->minus = intval($mam->minus,10);
+       $mem->minus = intval($mem->minus,10);
        $mem->minus += 1;
        $mem->save();
     }
@@ -145,7 +100,7 @@ class Mem extends Model
      * undocumented function
      *
      * @return void
-     * @author 
+     * @author
      **/
     public function remove($id)
     {

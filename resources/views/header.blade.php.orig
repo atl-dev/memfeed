@@ -35,11 +35,19 @@ camelCase - ids in HTML  , variables in php ;
             <a class="navbar-brand logo" href="/">MEMFEED.PL</a>
         </div>
 
+<<<<<<< HEAD
         <!--TODO-note Why there are ~myNavbar~ id ? -->
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li class="active" id="home"><a href="/">Home</a></li>
                 <li id="afterRoom"><a href="/anteroom">Anteroom</a></li>
+=======
+        <!--TODO-note Why there are ~myNavbar~ id ?? -->
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active" id="home"><a href="/">Home</a></li>
+                <li id="afterRoom"><a href="/afterroom">Anteroom</a></li>
+>>>>>>> origin/master
                 <li id="top"><a href="/top">Top</a></li>
             </ul>
             <!--Search area -->

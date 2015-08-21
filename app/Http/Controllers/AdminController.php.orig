@@ -8,16 +8,23 @@ use Redirect;
  * Controller which handle administrative actions
  *
  * @package AdminController
+<<<<<<< HEAD
  * @author Adrian Cybulski @Xeonid
+=======
+ * @author Adrian Cybulski @Xeonid 
+>>>>>>> origin/master
  **/
 class AdminController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
+<<<<<<< HEAD
         if(!Auth::user()->admin) {
           exit;
         }
+=======
+>>>>>>> origin/master
     }
 
     public function index()
@@ -30,7 +37,11 @@ class AdminController extends Controller
      * Returns View with list of unapproved mems
      *
      * @return View
+<<<<<<< HEAD
      * @param
+=======
+     * @param  
+>>>>>>> origin/master
      **/
     public function manageMems()
     {
@@ -42,7 +53,11 @@ class AdminController extends Controller
      * Returns View with list of unapproved comments
      *
      * @return View
+<<<<<<< HEAD
      * @param
+=======
+     * @param 
+>>>>>>> origin/master
      **/
     public function manageComments()
     {

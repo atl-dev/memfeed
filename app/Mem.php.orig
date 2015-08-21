@@ -13,15 +13,23 @@ class Mem extends Model
      * @var Array
      **/
     protected $fillable = ['plus','title','img_path','plus','minus','approved'];
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> origin/master
     /**
      * Table name in database
      *
      * @var string
      **/
     protected $table = 'mems';
+<<<<<<< HEAD
     
    
+=======
+
+>>>>>>> origin/master
 
     /**
      * Creates relation.
@@ -66,6 +74,7 @@ class Mem extends Model
             }
         }
     }
+<<<<<<< HEAD
  
     /**
      * Returns inapproved mems for anteroom
@@ -113,10 +122,32 @@ class Mem extends Model
     {
        $mem = Mem::find($id);
        $mem->plus = intval($mam->plus,10);
+=======
+
+    public function getUnApproved()
+    {
+        return Mem::where('approved','no')->orderBy('id','desc')->get();
+    }
+    public function getFeed()
+    {
+        return Mem::where('approved','yes')->orderBy('id','desc')->get();
+    }
+    public function getTop()
+    {
+
+        return Mem::orderBy('plus','desc')->Approved()->get();
+    }
+
+    public function rateUp($id)
+    {
+       $mem = Mem::find($id);
+       $mem->plus = intval($mem->plus,10);
+>>>>>>> origin/master
        $mem->plus += 1;
        $mem->save();
     }
 
+<<<<<<< HEAD
     /**
      * Increments negative rate
      *
@@ -128,15 +159,28 @@ class Mem extends Model
     {
        $mem = Mem::find($id);
        $mem->minus = intval($mam->minus,10);
+=======
+    public function rateDown($id)
+    {
+       $mem = Mem::find($id);
+       $mem->minus = intval($mem->minus,10);
+>>>>>>> origin/master
        $mem->minus += 1;
        $mem->save();
     }
 
     /**
+<<<<<<< HEAD
      * Delete Mem 
      *
      * @return void
      * @param  Int 
+=======
+     * undocumented function
+     *
+     * @return void
+     * @author
+>>>>>>> origin/master
      **/
     public function remove($id)
     {

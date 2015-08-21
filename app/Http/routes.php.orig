@@ -17,11 +17,15 @@ Route::controllers([
 ]);
 
 Route::get('/', function () {
+<<<<<<< HEAD
 	$mem = new App\Mem();
     return view('index',[
     		"active" => 'home',
     		"mems" => $mem->getFeed(),
     	]);
+=======
+    return view('index')->with('active','home');
+>>>>>>> origin/master
 });
 Route::get('/top',function(){
     $mems = new App\Mem();
@@ -58,4 +62,8 @@ Route::get('/approve/comment/{id}','AdminController@approveComment');
 
 Route::get('/add/mem',function(){ 
 	return view('add_mem_form');
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> origin/master

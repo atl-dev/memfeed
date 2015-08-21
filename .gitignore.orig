@@ -1,0 +1,11 @@
+/vendor
+/node_modules
+<<<<<<< HEAD
+/.phpintel
+/.rocketeer
+/.idea
+=======
+.env
+/.rocketeer
+/.idea
+>>>>>>> origin/master

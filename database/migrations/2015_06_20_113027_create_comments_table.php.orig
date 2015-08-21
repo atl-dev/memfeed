@@ -17,7 +17,11 @@ class CreateCommentsTable extends Migration
             $table->increments('id');
             $table->string('email');
             $table->text('body');
+<<<<<<< HEAD
             $table->integer('mem_id');
+=======
+            $table->integer('comment_id');
+>>>>>>> origin/master
             $table->enum('approved',['yes','no']);
             $table->timestamps();
         });

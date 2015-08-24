@@ -65,6 +65,10 @@
                 </div>
             </div>
 </div>
+@foreach($mem->comments as $comment)
+
+{{$comment['body']}}<br>
+ @endforeach
 @include('footer')
 
 

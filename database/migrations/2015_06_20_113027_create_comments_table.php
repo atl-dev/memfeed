@@ -18,6 +18,7 @@ class CreateCommentsTable extends Migration
             $table->string('email');
             $table->text('body');
             $table->integer('mem_id');
+            $table->integer('user_id');
             $table->enum('approved',['yes','no']);
             $table->timestamps();
         });

@@ -4,6 +4,7 @@ namespace app\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Redirect;
+use Input;
 /**
  * Controller which handle administrative actions
  *
@@ -25,7 +26,37 @@ class AdminController extends Controller
 
     }
 
+    /**
+     * Upload mem
+     *
+     * @return void
+     * @param 
+     **/
+    public function addMem ()
+    {
+        
+        if (Input::hasFile('image')) {
+            $data = [
+                'title' => Input::get('title'),
+                'file' => Input::file('image'),
+            ];
 
+            if (Input::file('image')->isValid()) {
+                $name = Input::file('image')->getClientOriginalName();
+                $ext = Input::file('image')->getClientOriginalExtension();
+                $name = md5($name).'.'.$ext;
+                Input::file('image')->move(__DIR__.'/../public/images/', $name);
+                $mem = App\Mem::create([
+                        'title' => $data['title'],
+                        'img_path' => '/images/'.$name,
+                        'user_id' => Auth::user()->id,
+                        'plus' => 0,
+                        'minus' => 0,
+                        'approved' => 'no',
+                    ]);
+            }
+        }
+    }
     /**
      * Returns View with list of unapproved mems
      *
@@ -68,7 +99,7 @@ class AdminController extends Controller
     /**
      * approves mem and redirect to management
      *
-     * @return Rediret
+     * @return Redirect
      * @param Integer
      **/
     public function approveMem($id)
@@ -76,5 +107,16 @@ class AdminController extends Controller
         $mem = new App\Mem();
         $mem->approve($id);
         return Redirect::to('/manage/mems');
+    }
+
+    /**
+     * Display form 
+     *
+     * @return View
+     * @param String
+     **/
+    public function form($name)
+    {
+        return view('Admin.form_'.$name);
     }
 }

@@ -51,11 +51,9 @@ Route::get('/mem/negative/{id}',function($id) {
 
 Route::get('/admin','AdminController@index');
 
-Route::get('/manage/comments','AdminController@manageComments');
-Route::get('/manage/mems','AdminController@manageMems');
-Route::get('/approve/mem/{id}','AdminController@approveMem');
-Route::get('/approve/comment/{id}','AdminController@approveComment');
-
-Route::get('/add/mem',function(){ 
-	return view('add_mem_form');
-});
+Route::get('/admin/manage/comments','AdminController@manageComments');
+Route::get('/admin/manage/mems','AdminController@manageMems');
+Route::get('/admin/manage/mems/approve/mem/{id}','AdminController@approveMem');
+Route::get('/admin/manage/comments/approve/comment/{id}','AdminController@approveComment');
+Route::get('/admin/add/mem','AdminController@addMem');
+Route::get('/admin/fomr/{name}','AdminController@form');

@@ -28,7 +28,7 @@ Route::get('/top',function(){
     return view('index',['active' => 'top','mems' => $mems->getTop()]);
 });
 
-Route::get('/anteroom',function(){
+Route::get('/anterroom',function(){
 	$mems = new App\Mem();
 	return view('index',['active' => 'anteroom','mems' => $mems->getUnApproved()]);
 });

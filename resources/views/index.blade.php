@@ -31,7 +31,7 @@
             advanced:{autoExpandHorizontalScroll:true}
         });
 
-        var btnLink = "#linkBtn<?php echo $nrOfPage?>";
+        var btnLink = "#linkBtn";
 
         $(btnLink).toggleClass("btnDefault-active");
         $(btnLink).toggleClass("btn-default");

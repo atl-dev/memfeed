@@ -20,6 +20,7 @@ class CreateMemsTable extends Migration
             $table->integer('plus');
             $table->integer('minus');
             $table->enum('approved',['yes','no']);
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

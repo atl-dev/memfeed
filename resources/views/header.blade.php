@@ -42,7 +42,7 @@ camelCase - ids in HTML  , variables in php ;
                     </div>
                 </li>
                 @if(!Auth::check())
-                    <li><a data-toggle="modal" data-target="#loginModal" style="cursor: pointer;"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+                    <li><a  href="/auth/login" data-target="#loginModal" style="cursor: pointer;"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
                 @else
                     <li><a href="your_acc.php" style="cursor: pointer;"><i class="fa fa-user"></i> Your acount</a></li>
                 @endif

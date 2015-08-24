@@ -6,9 +6,7 @@ camelCase - ids in HTML  , variables in php ;
 <script>
     $(document).ready(function(){
         //Funtion fo change activ  element
-        var active = <?php echo json_encode($active); ?> ;
-        $("li.active").removeClass("active");
-        $("#"+active).addClass("active");
+        
     });
 </script>
 
@@ -42,7 +40,7 @@ camelCase - ids in HTML  , variables in php ;
                     </div>
                 </li>
                 @if(!Auth::check())
-                    <li><a data-toggle="modal" data-target="#loginModal" style="cursor: pointer;"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+                    <li><a  href="/auth/login" data-target="#loginModal" style="cursor: pointer;"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
                 @else
                     <li><a href="your_acc.php" style="cursor: pointer;"><i class="fa fa-user"></i> Your acount</a></li>
                 @endif
@@ -51,7 +49,5 @@ camelCase - ids in HTML  , variables in php ;
     </div>
 </nav>
 
-<?php
 
-@include('login_modal')
-?>
+

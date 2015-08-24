@@ -1,7 +1,7 @@
 
     @foreach($mems as $mem)
     <article  class="mem">
-        <a href="#">
+        <a href="/view/mem/{{$mem->id}}">
             <img class="img-responsive mem-img" src="{{$mem->img_path}}" alt="TEXT"/>
         </a>
         <div class="row mem-content">

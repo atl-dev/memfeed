@@ -34,9 +34,9 @@ Route::get('/anterroom',function(){
 });
 Route::get('/view/mem/{id}', function ($id) {
 
-    $mems = Mem::find($id);
+    $mems = App\Mem::findOrFail($id);
 
-    return view('mem')->with('mems', $mems);
+    return view('mem')->with('mem', $mems);
 });
 
 Route::get('/mem/positive/{id}',function($id) {

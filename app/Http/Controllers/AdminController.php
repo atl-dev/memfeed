@@ -119,4 +119,30 @@ class AdminController extends Controller
     {
         return view('Admin.form_'.$name);
     }
+
+    /**
+     * Delete mem
+     *
+     * @return HTTP Redirect
+     * @param Int
+     **/
+    public function deleteMem ($id)
+    {
+        $mem = App\Mem::findOrFail($id);
+        $mem->delete();
+        return Redirect::back();
+    }
+
+    /**
+     * Delete user
+     *
+     * @return HTTP Redirect
+     * @param Int
+     **/
+    public function deleteUser($id)
+    {
+        $user = App\User::findOrFail($id);
+        $user->delete();
+        return Redirect::back();
+    }
 }

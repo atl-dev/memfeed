@@ -22,4 +22,4 @@
 <script src="/scroller/jquery.mCustomScrollbar.concat.min.js"></script>
 
 <!-- Latest compiled and minified CSS :) -->
-<link rel="stylesheet" type="text/css" href="home_style.css">
+<link rel="stylesheet" type="text/css" href="/home_style.css">

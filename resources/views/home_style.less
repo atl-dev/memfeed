@@ -62,3 +62,55 @@ article{
     width: 700px;
   }
 }
+
+#scrollBar{
+  margin: 15px auto;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  width: 100%;
+  height: 100px;
+}
+
+.mCSB_horizontal.mCSB_inside > .mCSB_container {
+  margin-right: 0;
+  margin-bottom: 5px;
+}
+.mCSB_scrollTools.mCSB_scrollTools_horizontal {
+  bottom:35px;
+}
+
+.nextPageBtn{
+  width:100%;
+}
+
+#footer {
+  background-color: #33343a;
+  margin:0px;
+}
+.footerInside{
+  @paddingInfo: 40px;
+  padding-top: @paddingInfo;
+  padding-bottom:@paddingInfo;
+  padding-left: 15px;
+  text-align: center;
+}
+
+h3{
+  color:@brand-primary;
+}
+
+@OrangeOne:#D86725;
+.btnDefault-active{
+  border-color: @OrangeOne;
+  color: @OrangeOne;
+}
+
+.btnDefault-active.active, .btnDefault-active:active, .btnDefault-active:hover, .open>.dropdown-toggle.btnDefault-active {
+  color: darken(@OrangeOne,5%);
+  background-color: #060606;
+  border-color: darken(@OrangeOne,5%);
+}
+

@@ -28,7 +28,7 @@ camelCase - ids in HTML  , variables in php ;
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active" id="home"><a href="/">Home</a></li>
-                <li id="afterRoom"><a href="/afterroom">Anteroom</a></li>
+                <li id="afterRoom"><a href="/anterroom">Anteroom</a></li>
                 <li id="top"><a href="/top">Top</a></li>
             </ul>
             <!--Search area -->

@@ -145,13 +145,13 @@ class Mem extends Model
     }
 
     /**
-     * undocumented function
+     * Relation to users table
      *
-     * @return void
-     * @author 
+     * @return Query Object
+     * @param  
      **/
     public function  author()
     {
-        return $this->belongsTo('App\User','user_id');
+        return $this->hasOne('App\User','user_id');
     }
 }

@@ -17,6 +17,8 @@ class Comment extends Model
 
     public function approve($id)
     {
-    	\DB::update("UPDATE comments SET approved='yes' WHERE id = ?",[$id]);
+    	$comment = App\Comment::findOrFail($id);
+    	$comment->approved = "yes";
+    	$comment->save();
     }
 }

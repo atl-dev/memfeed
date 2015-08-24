@@ -16,10 +16,10 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 <!--CSS to edit Scrollbar-->
-<link rel="stylesheet" href="scroller/jquery.mCustomScrollbar.css" />
+<link rel="stylesheet" href="/scroller/jquery.mCustomScrollbar.css" />
 
 <!--JS to edit Scrollbar-->
-<script src="scroller/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/scroller/jquery.mCustomScrollbar.concat.min.js"></script>
 
 <!-- Latest compiled and minified CSS :) -->
 <link rel="stylesheet" type="text/css" href="home_style.css">

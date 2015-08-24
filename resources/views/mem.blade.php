@@ -65,7 +65,10 @@
                 </div>
             </div>
 </div>
-{{var_dump($mem->comments)}}
+@foreach($mem->comments as $comment)
+
+{{$comment['body']}}<br>
+ @endforeach
 @include('footer')
 
 

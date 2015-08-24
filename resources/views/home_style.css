@@ -78,6 +78,10 @@ article {
 h3 {
   color: #fffd53;
 }
+h4,
+h5 {
+  color: #eeeeee;
+}
 .btnDefault-active {
   border-color: #d86725;
   color: #d86725;

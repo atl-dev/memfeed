@@ -13,6 +13,7 @@ camelCase - ids in HTML  , variables in php ;
 //$ACTIVE is needed to be set by php depends on current route
 //home, afterRoom, top;
 $active = "home";
+$zalogowany = 0; //(tak)
 
  ?>
 <script>
@@ -36,8 +37,8 @@ $active = "home";
             <a class="navbar-brand logo" href="/">MEMFEED.PL</a>
         </div>
 
-        <!--TODO-note Why there is ~myNavbar~ id ?? -->
-        <div class="collapse navbar-collapse" id="myNavbar">
+        <!--TODO-note Deleted id ~myNavbar~ -->
+        <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active" id="home"><a href="/">Home</a></li>
                 <li id="afterRoom"><a href="/afterroom">Anteroom</a></li>
@@ -53,8 +54,25 @@ $active = "home";
                             </span>
                     </div>
                 </li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <?php
+                if($zalogowany==0)
+                {
+                    ?>
+                    <li><a data-toggle="modal" data-target="#loginModal" style="cursor: pointer;"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+                <?php
+                }
+                else
+                {
+                    ?>
+                    <li><a href="your_acc.php" style="cursor: pointer;"><i class="fa fa-user"></i> Your acount</a></li>
+                <?php
+                }
+                ?>
             </ul>
         </div>
     </div>
 </nav>
+
+<?php
+require("login_modal.php");
+?>

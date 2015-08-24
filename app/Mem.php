@@ -134,6 +134,6 @@ class Mem extends Model
      **/
     public function comments()
     {
-        return $this->hasMan('App\Comment','mem_id');
+        return $this->hasMany('App\Comment','mem_id');
     }
 }

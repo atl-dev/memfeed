@@ -1,5 +1,5 @@
 
-    @forech($mems as $mem)
+    @foreach($mems as $mem)
     <article  class="mem">
         <a href="#">
             <img class="img-responsive mem-img" src="{{$mem->img_path}}" alt="TEXT"/>
@@ -17,8 +17,11 @@
                 </div>
             </div>
             <div class="col-md-6 mem-addedBy vCenter" style="margin-bottom: 15px;">
-                Added by: <b><a href="/user/profile/{{$mem->author->id}}" style="margin-right: 10px;">{{$mem->author->username}}</a></b>
+                Added by: <b><a href="/user/profile/" style="margin-right: 10px;">
+                </a></b>
                 <i class="fa fa-commenting fa-1x"> <a href="/view/mem/{{$mem->id}}#comment" alt="Link to comment site"><b>Comment</b></a></i>
             </div>
     </article>
+
 @endforeach
+

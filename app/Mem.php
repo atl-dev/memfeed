@@ -143,4 +143,15 @@ class Mem extends Model
         $mem = Mem::find($id);
         $mem->delete();
     }
+
+    /**
+     * undocumented function
+     *
+     * @return void
+     * @author 
+     **/
+    public function  author()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

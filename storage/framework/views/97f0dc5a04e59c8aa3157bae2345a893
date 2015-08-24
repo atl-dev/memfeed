@@ -6,9 +6,7 @@ camelCase - ids in HTML  , variables in php ;
 <script>
     $(document).ready(function(){
         //Funtion fo change activ  element
-        var active = <?php echo json_encode($active); ?> ;
-        $("li.active").removeClass("active");
-        $("#"+active).addClass("active");
+        
     });
 </script>
 
@@ -51,7 +49,5 @@ camelCase - ids in HTML  , variables in php ;
     </div>
 </nav>
 
-<?php
 
-@include('login_modal')
-?>
+

@@ -36,7 +36,7 @@ class AdminController extends Controller
     {
         $mems = App\Mem::all()->where('approved', 'no');
 
-        return view('manage_mems', ['mems' => $mems]);
+        return view('Admin.manage_mems', ['mems' => $mems]);
     }
     /**
      * Returns View with list of unapproved comments
@@ -48,7 +48,7 @@ class AdminController extends Controller
     {
         $comments = Comment::all()->where('approved', 'no');
 
-        return view('manage_comments', ['comments' => $comments]);
+        return view('Admin.manage_comments', ['comments' => $comments]);
     }
 
     /**

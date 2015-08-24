@@ -1,0 +1,96 @@
+.yellowMenu {
+  border-bottom: 4px solid #fffd53;
+  font-weight: bold;
+}
+.logo {
+  letter-spacing: 5px;
+}
+.mem {
+  background-color: #292a30;
+  border: 1px solid #34363e;
+  text-align: center;
+  overflow: visible;
+  max-width: 750px;
+  margin: 0 auto 30px;
+}
+.mem-img {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mem-content {
+  text-align: center;
+  width: 85%;
+  margin: 15px auto 10px;
+  padding: 10px 0px;
+  overflow: auto;
+  border-top: 1px solid #fffd53;
+  color: #8a8d9b;
+  display: table;
+}
+.mem-addedBy {
+  display: table-cell;
+  vertical-align: middle;
+}
+article {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.vCenter {
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+@media screen and (min-width: 992px) and (max-width: 1043px) {
+  .col-sm-8 {
+    width: 700px;
+  }
+}
+#scrollBar {
+  margin: 15px auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 100%;
+  height: 100px;
+}
+.mCSB_horizontal.mCSB_inside > .mCSB_container {
+  margin-right: 0;
+  margin-bottom: 5px;
+}
+.mCSB_scrollTools.mCSB_scrollTools_horizontal {
+  bottom: 35px;
+}
+.nextPageBtn {
+  width: 100%;
+}
+#footer {
+  background-color: #33343a;
+  margin: 0px;
+}
+.footerInside {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 15px;
+  text-align: center;
+}
+h3 {
+  color: #fffd53;
+}
+h4,
+h5 {
+  color: #eeeeee;
+}
+.btnDefault-active {
+  border-color: #d86725;
+  color: #d86725;
+}
+.btnDefault-active.active,
+.btnDefault-active:active,
+.btnDefault-active:hover,
+.open > .dropdown-toggle.btnDefault-active {
+  color: #c25d21;
+  background-color: #060606;
+  border-color: #c25d21;
+}

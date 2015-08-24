@@ -2,20 +2,7 @@
 camelCase - ids in HTML  , variables in php ;
 -->
 
-<?php
-/**
- * Created by PhpStorm.
- * User: puman_000
- * Date: 2015-08-04
- * Time: 14:16
- */
 
-//$ACTIVE is needed to be set by php depends on current route
-//home, afterRoom, top;
-$active = "home";
-$zalogowany = 0; //(tak)
-
- ?>
 <script>
     $(document).ready(function(){
         //Funtion fo change activ  element
@@ -54,25 +41,17 @@ $zalogowany = 0; //(tak)
                             </span>
                     </div>
                 </li>
-                <?php
-                if($zalogowany==0)
-                {
-                    ?>
+                @if(!Auth::check())
                     <li><a data-toggle="modal" data-target="#loginModal" style="cursor: pointer;"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
-                <?php
-                }
-                else
-                {
-                    ?>
+                @else
                     <li><a href="your_acc.php" style="cursor: pointer;"><i class="fa fa-user"></i> Your acount</a></li>
-                <?php
-                }
-                ?>
+                @endif
             </ul>
         </div>
     </div>
 </nav>
 
 <?php
-require("login_modal.php");
+
+@include('login_modal')
 ?>

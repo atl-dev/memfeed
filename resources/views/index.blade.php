@@ -1,11 +1,7 @@
-<?php
-require("functions.php");
-$nrOfPage = 3;
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require("head.php"); ?>
+    @include('head')
 </head>
 
 <body>
@@ -44,10 +40,8 @@ $nrOfPage = 3;
     });
 
 </script>
-
-    <?php require('header.php'); ?>
-    <?php require('content.php'); ?>
-    <?php require('footer.php'); ?>
-
+    @include('header')
+    @include('content')
+    @include('footer')
 </body>
 </html>

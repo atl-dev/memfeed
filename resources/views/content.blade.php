@@ -2,7 +2,7 @@
             <div class="row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
-                   @include('functions')
+                   @include('memfeed')
                     <div style="max-width: 750px;margin: 40px auto;">
                         <a href="{!! $mems->nextPageUrl()!!}" style="text-decoration:none">
                         <div class="btn btn-primary nextPageBtn">

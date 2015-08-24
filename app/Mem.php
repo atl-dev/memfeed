@@ -134,4 +134,15 @@ class Mem extends Model
     {
         return $this->belongsTo('App\User','user_id');
     }
+
+    /**
+     * undocumented function
+     *
+     * @return void
+     * @author 
+     **/
+    public function comments()
+    {
+        return $this->hasMan('App\Comment','mem_id');
+    }
 }

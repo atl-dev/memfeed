@@ -11,7 +11,7 @@ class Comment extends Model
 
     public function mem()
     {
-    	return $this->belongsTo('App\Mem');
+    	return $this->belongsTo('App\Mem','mem_id');
     }
 
 

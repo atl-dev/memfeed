@@ -65,6 +65,7 @@
                 </div>
             </div>
 </div>
+{{var_dump($mem->comments)}}
 @include('footer')
 
 

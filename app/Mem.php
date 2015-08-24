@@ -23,15 +23,6 @@ class Mem extends Model
     
    
 
-    /**
-     * Creates relation.
-     *
-     * @return Relation
-     **/
-    public function comments()
-    {
-        return $this->hasMany('App\Comment');
-    }
 
 
     /**

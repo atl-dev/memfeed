@@ -88,6 +88,10 @@ class Mem extends Model
            $mem->plus = intval($mam->plus,10);
            $mem->plus += 1;
            $mem->save();
+           $rate = Rate::create([
+                'user_id' => Auth::user()->id,
+                'mem_id' => $id.
+            ]);
         }
     }
 
@@ -106,6 +110,10 @@ class Mem extends Model
            $mem->minus = intval($mam->minus,10);
            $mem->minus += 1;
            $mem->save();
+           $rate = Rate::create([
+                'user_id' => Auth::user()->id,
+                'mem_id' => $id.
+            ]);
        }
     }
 

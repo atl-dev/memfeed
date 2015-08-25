@@ -4,7 +4,7 @@ namespace app;
 
 use Illuminate\Database\Eloquent\Model;
 use Input;
-
+use Auth;
 class Mem extends Model
 {
     /**
@@ -82,10 +82,13 @@ class Mem extends Model
     
     public function rateUp($id)
     {
-       $mem = Mem::find($id);
-       $mem->plus = intval($mam->plus,10);
-       $mem->plus += 1;
-       $mem->save();
+        $rates = new Rate();
+        if(Auth::check() and !$rates->userHasRatedMem($id)) {
+           $mem = Mem::find($id);
+           $mem->plus = intval($mam->plus,10);
+           $mem->plus += 1;
+           $mem->save();
+        }
     }
 
     /**
@@ -97,10 +100,13 @@ class Mem extends Model
     
     public function rateDown($id)
     {
-       $mem = Mem::find($id);
-       $mem->minus = intval($mam->minus,10);
-       $mem->minus += 1;
-       $mem->save();
+        $rates = new Rate();
+        if(Auth::check() and !$rates->userHasRatedMem($id)) {
+           $mem = Mem::find($id);
+           $mem->minus = intval($mam->minus,10);
+           $mem->minus += 1;
+           $mem->save();
+       }
     }
 
     /**

@@ -4,6 +4,8 @@ namespace app\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Redirect;
+use App;
+use Auth;
 use Input;
 /**
  * Controller which handle administrative actions

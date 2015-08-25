@@ -18,14 +18,14 @@ class mems extends Seeder
                 "password" => $faker->word,
 
             ]);
-        for($i=0;$i<2000;$i++) {
+        for($i=0;$i<100000;$i++) {
         	$mem = App\Mem::create([
         			'title' => $faker->userName,
         			'img_path' => 'http://placehold.it/600x400',
         			'approved' => 'yes',
 					'plus' => '0',
 					'minus' => '0',
-                    'user_id' => $user->id,
+                    'user_id' => 2,
 					'created_at' => date("Y-m-d H:i:s"),
 					'updated_at' => date('Y-m-d H:i:s'),
 				]);

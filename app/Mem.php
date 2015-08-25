@@ -23,15 +23,6 @@ class Mem extends Model
     
    
 
-    /**
-     * Creates relation.
-     *
-     * @return Relation
-     **/
-    public function comments()
-    {
-        return $this->hasMany('App\Comment');
-    }
 
 
     /**
@@ -132,6 +123,17 @@ class Mem extends Model
      **/
     public function  author()
     {
-        return $this->hasOne('App\User','user_id');
+        return $this->belongsTo('App\User','user_id');
+    }
+
+    /**
+     * undocumented function
+     *
+     * @return void
+     * @author 
+     **/
+    public function comments()
+    {
+        return $this->hasMany('App\Comment','mem_id');
     }
 }

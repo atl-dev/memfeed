@@ -33,15 +33,21 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     protected $hidden = ['password', 'remember_token'];
 
+
 	/**
 	 * Relation to Mems 
 	 * @return Query Object
 	 * @param 
 	 */
-
 	 public function mems()
 	 {
 	 	return $this->hasMany('App\Mem','user_id');
 	 }
+
+     public function comments()
+     {
+        return $this->hasMany('App\Comment','comment_id');
+     }
+
 
 }

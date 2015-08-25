@@ -32,6 +32,12 @@ Route::get('/anterroom',function(){
 	$mems = new App\Mem();
 	return view('index',['active' => 'anteroom','mems' => $mems->getUnApproved()]);
 });
+
+
+
+Route::get('/view/profile/{id}','UserController@viewProfile');
+
+
 Route::get('/view/mem/{id}', function ($id) {
 
     $mems = App\Mem::findOrFail($id);
@@ -47,6 +53,8 @@ Route::get('/mem/negative/{id}',function($id) {
 
     return Redirect::to("/view/mem/".$id);
 });
+
+
 
 
 Route::get('/admin','AdminController@index');

@@ -14,6 +14,10 @@ class Comment extends Model
     	return $this->belongsTo('App\Mem','mem_id');
     }
 
+    public function author()
+    {
+        return $this->belongsTo('App\User','user_id');
+    }
 
     public function approve($id)
     {

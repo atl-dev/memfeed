@@ -13,7 +13,7 @@
 			        
 			        <input type="email" placeholder="E-mail" class='form-control' name="email" value="{{ old('email') }}">
 			    </div>
-
+			    <input type='hidden' name="remember" value="false">
 			    <div>
 			       
 			        <input type="password" placeholder="Password" class='form-control' name="password" id="password">
@@ -27,8 +27,13 @@
 		</div>
 		<div class='col-sm-6'>
 			<h4> Sign up</h4>
-			<form action="/auth/login" method="post">
+			<form action="/auth/register" method="post">
 			 {!! csrf_field() !!}
+
+			    <div>
+			       
+			        <input type="text" name="name" class="form-control" placeholder="Name" value="{{ old('name') }}">
+			    </div>
 				<div>
 			        
 			        <input type="email" placeholder="E-mail" class='form-control' name="email" value="{{ old('email') }}">
@@ -40,7 +45,7 @@
 			    </div>
 			     <div>
 			        
-			        <input type="password" placeholder="Password" class='form-control' name="password" id="password">
+			        <input type="password" placeholder="Confirm password" class='form-control' name="password_confirmation" id="password">
 			    </div>
 
 			    <div>

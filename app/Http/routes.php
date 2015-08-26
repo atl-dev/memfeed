@@ -61,6 +61,7 @@ Route::get('/admin','AdminController@index');
 
 Route::get('/admin/manage/comments','AdminController@manageComments');
 Route::get('/admin/manage/mems','AdminController@manageMems');
+Route::get('/admin/manage/users','AdminController@manageUsers');
 Route::get('/admin/manage/mems/approve/mem/{id}','AdminController@approveMem');
 Route::get('/admin/manage/comments/approve/comment/{id}','AdminController@approveComment');
 Route::get('/admin/add/mem','AdminController@addMem');

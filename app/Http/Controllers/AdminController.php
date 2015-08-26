@@ -4,6 +4,8 @@ namespace app\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Redirect;
+use App;
+use Auth;
 use Input;
 /**
  * Controller which handle administrative actions
@@ -17,13 +19,13 @@ class AdminController extends Controller
     {
         $this->middleware('auth');
         if(!Auth::user()->admin) {
-          exit;
+          //exit;
         }
     }
 
     public function index()
     {
-
+        return view('Admin.index');
     }
 
     /**

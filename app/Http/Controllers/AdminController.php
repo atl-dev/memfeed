@@ -4,7 +4,10 @@ namespace app\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Redirect;
+use App;
+use Auth;
 use Input;
+use Request;
 /**
  * Controller which handle administrative actions
  *
@@ -17,13 +20,13 @@ class AdminController extends Controller
     {
         $this->middleware('auth');
         if(!Auth::user()->admin) {
-          exit;
+          //exit;
         }
     }
 
     public function index()
     {
-
+        return view('Admin.index');
     }
 
     /**
@@ -34,18 +37,22 @@ class AdminController extends Controller
      **/
     public function addMem ()
     {
+       // dd($_POST);
+
         
         if (Input::hasFile('image')) {
             $data = [
                 'title' => Input::get('title'),
-                'file' => Input::file('image'),
+               
             ];
 
             if (Input::file('image')->isValid()) {
+               
                 $name = Input::file('image')->getClientOriginalName();
                 $ext = Input::file('image')->getClientOriginalExtension();
                 $name = md5($name).'.'.$ext;
-                Input::file('image')->move(__DIR__.'/../public/images/', $name);
+                Input::file('image')->move(__DIR__.'/../../../public/images/', $name);
+               
                 $mem = App\Mem::create([
                         'title' => $data['title'],
                         'img_path' => '/images/'.$name,
@@ -54,7 +61,17 @@ class AdminController extends Controller
                         'minus' => 0,
                         'approved' => 'no',
                     ]);
+               
+                return Redirect::to('/view/mem/'.$mem->id);
+            } else {
+                return Redirect::back()->withErrors([
+                        "Input file is not valid",
+                    ]);
             }
+        } else {
+            return Redirect::back()->withErrors([
+                        "Input file does not exits",
+                    ]);
         }
     }
     /**

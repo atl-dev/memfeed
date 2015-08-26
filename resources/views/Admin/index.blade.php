@@ -3,7 +3,3 @@
 
 {{--  --}}
 
-
-
-
-@include('Admin.footer')

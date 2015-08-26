@@ -19,13 +19,13 @@ class AdminController extends Controller
     {
         $this->middleware('auth');
         if(!Auth::user()->admin) {
-          exit;
+          //exit;
         }
     }
 
     public function index()
     {
-
+        return view('Admin.index');
     }
 
     /**

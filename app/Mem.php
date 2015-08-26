@@ -112,7 +112,7 @@ class Mem extends Model
            $mem->save();
            $rate = Rate::create([
                 'user_id' => Auth::user()->id,
-                'mem_id' => $id.
+                'mem_id' => $id,
             ]);
        }
     }

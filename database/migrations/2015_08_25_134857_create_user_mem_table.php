@@ -13,9 +13,9 @@ class CreateUserMemTable extends Migration
     public function up()
     {
         Schema::create('user_mem',function(Blueprint $table){
-            $this->increments('id');
-            $this->integer('user_id');
-            $this->integer('mem_id');
+            $table->increments('id');
+            $table->integer('user_id');
+            $table->integer('mem_id');
         });
 
     }

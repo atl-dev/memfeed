@@ -11054,3 +11054,28 @@ Stack trace:
 #41 /home/xeonid/workspace/atl-dev/memfeed/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #42 /home/xeonid/workspace/atl-dev/memfeed/server.php(21): require_once('/home/xeonid/wo...')
 #43 {main}  
+[2015-08-28 14:30:40] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to undefined method CreateUserMemTable::increments()' in /home/xeonid/workspace/atl-dev/memfeed/database/migrations/2015_08_25_134857_create_user_mem_table.php:16
+Stack trace:
+#0 /home/xeonid/workspace/atl-dev/memfeed/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(127): Symfony\Component\Debug\Exception\FatalErrorException->__construct()
+#1 /home/xeonid/workspace/atl-dev/memfeed/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(112): Illuminate\Foundation\Bootstrap\HandleExceptions->fatalExceptionFromError()
+#2 /home/xeonid/workspace/atl-dev/memfeed/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(0): Illuminate\Foundation\Bootstrap\HandleExceptions->handleShutdown()
+#3 /home/xeonid/workspace/atl-dev/memfeed/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(132): CreateUserMemTable->{closure:/home/xeonid/workspace/atl-dev/memfeed/database/migrations/2015_08_25_134857_create_user_mem_table.php:15-19}()
+#4 /home/xeonid/workspace/atl-dev/memfeed/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(213): Illuminate\Database\Schema\Builder->create()
+#5 /home/xeonid/workspace/atl-dev/memfeed/database/migrations/2015_08_25_134857_create_user_mem_table.php(19): Illuminate\Support\Facades\Facade::__callStatic()
+#6 /home/xeonid/workspace/atl-dev/memfeed/database/migrations/2015_08_25_134857_create_user_mem_table.php(19): Illuminate\Support\Facades\Schema::create()
+#7 /home/xeonid/workspace/atl-dev/memfeed/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(134): CreateUserMemTable->up()
+#8 /home/xeonid/workspace/atl-dev/memfeed/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(111): Illuminate\Database\Migrations\Migrator->runUp()
+#9 /home/xeonid/workspace/atl-dev/memfeed/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(84): Illuminate\Database\Migrations\Migrator->runMigrationList()
+#10 /home/xeonid/workspace/atl-dev/memfeed/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(74): Illuminate\Database\Migrations\Migrator->run()
+#11 /home/xeonid/workspace/atl-dev/memfeed/vendor/laravel/framework/src/Illuminate/Container/Container.php(502): Illuminate\Database\Console\Migrations\MigrateCommand->fire()
+#12 /home/xeonid/workspace/atl-dev/memfeed/vendor/laravel/framework/src/Illuminate/Container/Container.php(502): call_user_func_array:{/home/xeonid/workspace/atl-dev/memfeed/vendor/laravel/framework/src/Illuminate/Container/Container.php:502}()
+#13 /home/xeonid/workspace/atl-dev/memfeed/vendor/laravel/framework/src/Illuminate/Console/Command.php(150): Illuminate\Container\Container->call()
+#14 /home/xeonid/workspace/atl-dev/memfeed/vendor/symfony/console/Command/Command.php(259): Illuminate\Console\Command->execute()
+#15 /home/xeonid/workspace/atl-dev/memfeed/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Symfony\Component\Console\Command\Command->run()
+#16 /home/xeonid/workspace/atl-dev/memfeed/vendor/symfony/console/Application.php(878): Illuminate\Console\Command->run()
+#17 /home/xeonid/workspace/atl-dev/memfeed/vendor/symfony/console/Application.php(195): Symfony\Component\Console\Application->doRunCommand()
+#18 /home/xeonid/workspace/atl-dev/memfeed/vendor/symfony/console/Application.php(126): Symfony\Component\Console\Application->doRun()
+#19 /home/xeonid/workspace/atl-dev/memfeed/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(94): Symfony\Component\Console\Application->run()
+#20 /home/xeonid/workspace/atl-dev/memfeed/artisan(36): Illuminate\Foundation\Console\Kernel->handle()
+#21 /home/xeonid/workspace/atl-dev/memfeed/artisan(0): {main}()
+#22 {main}  

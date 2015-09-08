@@ -6,7 +6,7 @@ camelCase - ids in HTML  , variables in php ;
 <script>
     $(document).ready(function(){
         //Funtion fo change activ  element
-        
+
     });
 </script>
 
@@ -40,6 +40,7 @@ camelCase - ids in HTML  , variables in php ;
                     </div>
                 </li>
                 @if(!Auth::check())
+                    <!--@TODO use here your modal  -->
                     <li><a  href="/auth/login" data-target="#loginModal" style="cursor: pointer;"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
                 @else
 
@@ -49,6 +50,3 @@ camelCase - ids in HTML  , variables in php ;
         </div>
     </div>
 </nav>
-
-
-

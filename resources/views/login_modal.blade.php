@@ -7,14 +7,16 @@
             </div>
             <div class="modal-body">
                 <!--                Miejsce użycia formy - admin.php-->
-                <form action="your_acc.php" method="post">
+                
+                <form action="auth/login" method="post">
+                  <input type='hidden' name='_token' value='{{csrf_token()}}'>
                     <div class="form-group" >
-                        <h5><label for="usr"><i class="fa fa-user"></i> Name:</label></h5>
-                        <input type="text" class="form-control" name="usr" id="usr">
+                        <h5><label for="usr"><i class="fa fa-user"></i> E-mail:</label></h5>
+                        <input type="email" class="form-control" name="email" id="usr">
                     </div>
                     <div class="form-group" >
                         <h5><label for="pwd"><i class="fa fa-lock"></i> Password:</label></h5>
-                        <input type="password" class="form-control" name="pwd" id="pwd">
+                        <input type="password" class="form-control" name="password" id="pwd">
                     </div>
                     <input style="width: 100%" type="submit" name="submit" value="Login" class="btn btn-default">
                 </form>

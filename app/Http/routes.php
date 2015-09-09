@@ -54,7 +54,7 @@ Route::get('/mem/negative/{id}',function($id) {
     return Redirect::to("/view/mem/".$id);
 });
 
-
+Route::post('/mem/add/comment','MemController@addComment');
 
 
 Route::get('/admin','AdminController@index');

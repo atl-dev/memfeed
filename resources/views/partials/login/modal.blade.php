@@ -1,7 +1,7 @@
 <div id="loginModal" class="modal fade" role="dialog" style="color: #333;">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
-            <div class="modal-header">s
+            <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><i style="color:white;" class="fa fa-times"></i></button>
                 <h4 class="modal-title">Log in form</h4>
             </div>

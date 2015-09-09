@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    @include('head')
+    @include('assets')
 </head>
 
 <body>
@@ -40,8 +40,21 @@
     });
 
 </script>
-    @include('header')
-    @include('content')
-    @include('footer')
+<div class="container-fluid" style=" margin-top: 100px;">
+    @include('partials.navbar.default')
+
+    @if(isset($mems))
+
+      @foreach($mems as $mem)
+        @include('partials.mem.default')
+      @endforeach
+
+    @endif
+    @if(isset($mem))
+      @include('partials.mem.single')
+    @endif
+
+    @include('partials.page.footer')
+</div>
 </body>
 </html>

@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body">
                 <!--                Miejsce użycia formy - admin.php-->
-                
+
                 <form action="auth/login" method="post">
                   <input type='hidden' name='_token' value='{{csrf_token()}}'>
                     <div class="form-group" >

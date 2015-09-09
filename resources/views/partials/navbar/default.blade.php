@@ -1,15 +1,3 @@
-<!--
-camelCase - ids in HTML  , variables in php ;
--->
-
-
-<script>
-    $(document).ready(function(){
-        //Funtion fo change activ  element
-
-    });
-</script>
-
 <nav class="navbar navbar-inverse navbar-fixed-top yellowMenu">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -40,8 +28,9 @@ camelCase - ids in HTML  , variables in php ;
                     </div>
                 </li>
                 @if(!Auth::check())
-                    <!--@TODO use here your modal  -->
-                    <li><a data-target="#loginModal" style="cursor: pointer;"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+                    
+					<!--@TODO use here your modal  -->
+                    <li><a data-target="#loginModal" data-toggle="modal" id='showLoginModal' style="cursor: pointer;"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
                 @else
 
                     <li><a href="/view/profile/{{Auth::user()->id}}" style="cursor: pointer;"><i class="fa fa-user"></i> Your acount</a></li>

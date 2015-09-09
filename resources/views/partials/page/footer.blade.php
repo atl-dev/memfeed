@@ -10,6 +10,7 @@
     </div>
     <div class="col-sm-4 footerInside">
         <h3><i class="fa fa-copyright"></i> Copyright:</h3>
+        {{--Nie wiem jak to niżej zamienić na blejda--}}
         All right reserved 2015 - <?php echo date("Y");?>
     </div>
 </div>

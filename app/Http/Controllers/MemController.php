@@ -34,7 +34,7 @@ class MemController extends Controller
      **/
     public function viewMem($id)
     {
-        return view('')->with('mem',Mem::find($id));
+        return view('index')->with('mem',Mem::find($id));
     }
   
 	public function addComment(Request $request)

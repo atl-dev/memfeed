@@ -20,4 +20,5 @@
             </a></b>
             <i class="fa fa-commenting fa-1x"> <a href="/view/mem/{{$mem->id}}#comment" alt="Link to comment site"><b>Comment</b></a></i>
         </div>
+    </div>
 </article>

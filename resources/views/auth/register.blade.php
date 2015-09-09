@@ -1,6 +1,8 @@
-@include('head')
-@include('header')
-
+<html>
+<head>
+@include('assets')
+</head>
+<body>
 <div class="container-fluid" style=" margin-top: 100px;">
             <div class="row">
                 <div class="col-sm-2"></div>
@@ -40,5 +42,6 @@
 	</div>
 
 </div>
-
-
+@include('partials.page.footer')
+</body>
+</html>

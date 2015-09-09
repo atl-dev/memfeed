@@ -54,6 +54,11 @@
       @include('partials.mem.single')
     @endif
 
+    @if(!Auth::check())
+      @include('partials.login.modal')
+    @endif
+
+    
     @include('partials.page.footer')
 </div>
 </body>

@@ -36,5 +36,20 @@ class MemController extends Controller
     {
         return view('')->with('mem',Mem::find($id));
     }
-   
+  
+	public function addComment(Request $request)
+	{
+		if(Auth::check()) {
+			 
+			$this->validate($request,['comment' => 'required']);
+			$comment =  App\Comment::create([
+				'email' => Auth::user()->email,
+				'body' => $request->input('comment'),
+				'mem_id' => $request->input('mem_id'),
+				'user_id' => Auth::user()->id,
+				'approved' => 'yes',
+
+			]);
+		}
+	}
 }

@@ -22,7 +22,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <a href="registration.php">Need account?</a></br>
+                <a href="/auth/register">Need account?</a></br>
                 <a href="remember_psw.php">Forgot password?</a>
             </div>
         </div>

@@ -1,6 +1,15 @@
 //  camelCase -> name of classes
 //  part-of-classes -> by using "-"
 
+* {
+  margin: 0px 0px;
+  padding: 0px 0px;
+}
+
+html, body {
+  height: 100%;
+}
+
 @brand-primary: #fffd53;
 @bg-color: #1D1E22;
 @gray-base: rgb(0, 0, 0);
@@ -24,10 +33,7 @@
 }
 
 .mem-img {
-  margin-top:20px;
-  margin-bottom: 20px;
-  margin-left:auto;
-  margin-right:auto;
+  margin: 20px auto;
 }
 
 .mem-content {
@@ -87,10 +93,28 @@ article{
   width:100%;
 }
 
+@FooterHeigh: 156px;
 #footer {
   background-color: #33343a;
   margin:0px;
+  clear:both;
+  height: @FooterHeigh;
 }
+
+#footer-push{
+  clear:both;
+  height: @FooterHeigh;
+}
+
+#footNav-container
+{
+//  margin-top: -74px;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom:@FooterHeigh*-1; /* - height of footer */
+}
+
 .footerInside{
   @paddingInfo: 40px;
   padding-top: @paddingInfo;
@@ -119,3 +143,6 @@ h4,h5{
   border-color: darken(@OrangeOne,5%);
 }
 
+.spaceLoginForm {
+  margin: 5px;
+}

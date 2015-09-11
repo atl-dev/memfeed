@@ -1,3 +1,11 @@
+* {
+  margin: 0px 0px;
+  padding: 0px 0px;
+}
+html,
+body {
+  height: 100%;
+}
 .yellowMenu {
   border-bottom: 4px solid #fffd53;
   font-weight: bold;
@@ -65,6 +73,19 @@ article {
 #footer {
   background-color: #33343a;
   margin: 0px;
+  clear: both;
+  height: 156px;
+}
+#footer-push {
+  clear: both;
+  height: 156px;
+}
+#footNav-container {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -156px;
+  /* - height of footer */
 }
 .footerInside {
   padding-top: 40px;

@@ -22,7 +22,7 @@ class MemController extends Controller
      */
     public function index()
     {
-        return view("")->with('mems',Mem::ReverseOrder()->get());
+        return view("index")->with('mems',Mem::ReverseOrder()->get());
     }
 
     

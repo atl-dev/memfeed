@@ -57,9 +57,8 @@
     @if(!Auth::check())
       @include('partials.login.modal')
     @endif
-
-    
-    @include('partials.page.footer')
 </div>
+@include('partials.page.footer')
+
 </body>
 </html>

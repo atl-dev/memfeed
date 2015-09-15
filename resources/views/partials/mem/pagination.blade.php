@@ -5,7 +5,7 @@
     <ul class='pagination'>
         @for($i=0;$i<$mems->count();$i++)
         <li><a href="{{$mems->url($i)}}">{{$i}}</a></li>
-        @endif
+        @endfor
     </ul>
 @endif
 </div>

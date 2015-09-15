@@ -48,7 +48,7 @@
       @foreach($mems as $mem)
         @include('partials.mem.default')
       @endforeach
-
+      @include('partials.mem.pagination');
     @endif
     @if(isset($mem))
       @include('partials.mem.single')

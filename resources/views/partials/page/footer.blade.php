@@ -13,10 +13,3 @@
         All right reserved 2015 - {{ date("Y")}}
     </div>
 </div>
-
-<script>
-//    if($("#footer").width() < 768) {
-//    $("#footer").css("height", "468px");
-//    }
-//    alert($("#footer").width());
-</script>

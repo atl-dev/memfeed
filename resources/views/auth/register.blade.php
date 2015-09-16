@@ -7,7 +7,6 @@
 
 @include('partials.navbar.default')
 
-<<<<<<< HEAD
 <div class="container-fluid"  id="footNav-container">
     <div class="row" style=" margin-top: 74px;text-align: center;">
         <div class="col-sm-3"></div>
@@ -39,9 +38,6 @@
         <div class="col-sm-3"></div>
     </div>
     <div id="footer-push"></div>
-=======
-
->>>>>>> master
 </div>
 @include('partials.page.footer')
 </body>

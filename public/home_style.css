@@ -70,43 +70,22 @@ article {
 .nextPageBtn {
   width: 100%;
 }
-@media (max-width: 768px) {
-  #footer {
-    background-color: #33343a;
-    margin: 0px;
-    clear: both;
-    height: 468px;
-  }
-  #footer-push {
-    clear: both;
-    height: 468px;
-  }
-  #footNav-container {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin-bottom: -468px;
-    /* - height of footer */
-  }
+#footer {
+  background-color: #33343a;
+  margin: 0px;
+  clear: both;
+  height: 156px;
 }
-@media (min-width: 769px) {
-  #footer {
-    background-color: #33343a;
-    margin: 0px;
-    clear: both;
-    height: 156px;
-  }
-  #footer-push {
-    clear: both;
-    height: 156px;
-  }
-  #footNav-container {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin-bottom: -156px;
-    /* - height of footer */
-  }
+#footer-push {
+  clear: both;
+  height: 156px;
+}
+#footNav-container {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -156px;
+  /* - height of footer */
 }
 .footerInside {
   padding-top: 40px;

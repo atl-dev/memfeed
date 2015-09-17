@@ -31,8 +31,7 @@
             advanced:{autoExpandHorizontalScroll:true}
         });
 
-//        TODO-Xenoid Change $active for correct nr of current page
-        var btnLink = "#linkBtn{{$active}}";
+        var btnLink = "#linkBtn{{$mems->currentPage()}}";
 
         $(btnLink).toggleClass("btnDefault-active");
         $(btnLink).toggleClass("btn-default");

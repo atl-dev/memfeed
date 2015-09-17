@@ -14,8 +14,9 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active" id="home"><a href="/">Home</a></li>
-                <li id="afterRoom"><a href="/anterroom">Anteroom</a></li>
+                <li id="anteroom"><a href="/anterroom">Anteroom</a></li>
                 <li id="top"><a href="/top">Top</a></li>
+                <li id="registry"><a href="/auth/register">Registration</a></li>
             </ul>
             <!--Search area -->
             <ul class="nav navbar-nav navbar-right">
@@ -28,11 +29,8 @@
                     </div>
                 </li>
                 @if(!Auth::check())
-                    
-					<!--@TODO use here your modal  -->
                     <li><a data-target="#loginModal" data-toggle="modal" id='showLoginModal' style="cursor: pointer;"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
                 @else
-
                     <li><a href="/view/profile/{{Auth::user()->id}}" style="cursor: pointer;"><i class="fa fa-user"></i> Your acount</a></li>
                 @endif
             </ul>

@@ -8,7 +8,7 @@
                 <b>Next page <i class="fa fa-arrow-circle-right fa-fw fa-lg"></i></b>
             </div>
             <div id="scrollBar">
-             @for($i=0;$i<$mems->count();$i++)
+             @for($i=1;$i<$mems->count();$i++)
                      <a id="linkBtn{{$i}}" href="{{$mems->url($i)}}"  style="margin-right:5px;width:54px;text-align: center;" class="btn btn-default">{{$i}}</a>
              @endfor
             </div>

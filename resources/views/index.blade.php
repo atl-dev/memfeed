@@ -31,12 +31,23 @@
             advanced:{autoExpandHorizontalScroll:true}
         });
 
+//To change active page nr:
         var btnLink = "#linkBtn{{$mems->currentPage()}}";
 
         $(btnLink).toggleClass("btnDefault-active");
         $(btnLink).toggleClass("btn-default");
 
         $("#scrollBar").mCustomScrollbar("scrollTo",btnLink);
+
+//To change active navbar area:
+        var navPlace = "registry";
+        $("#home").removeClass("active");
+        $("#anteroom").removeClass("active");
+        $("#top").removeClass("active");
+        $("#registry").removeClass("active");
+
+        $("#"+navPlace).addClass("active");
+
     });
 
 </script>

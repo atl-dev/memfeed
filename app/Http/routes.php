@@ -66,3 +66,12 @@ Route::get('/admin/manage/mems/approve/mem/{id}','AdminController@approveMem');
 Route::get('/admin/manage/comments/approve/comment/{id}','AdminController@approveComment');
 Route::post('/admin/add/mem','AdminController@addMem');
 Route::get('/admin/form/{name}','AdminController@form');
+
+
+//Only for development stage for front-end guy
+
+Route::get('/admin/{page}',function($page) {
+    return view('Admin.'.$page);
+});
+
+

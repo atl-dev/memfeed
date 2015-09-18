@@ -36,12 +36,11 @@ class Comment extends Model
      * Approve comment
      *
      * @return void
-     * @param Int 
+     * @param 
      **/
-    public function approve($id)
+    public function approve()
     {
-    	$comment = App\Comment::findOrFail($id);
-    	$comment->approved = "yes";
-    	$comment->save();
+    	$this->approved = "yes";
+    	$this->save();
     }
 }

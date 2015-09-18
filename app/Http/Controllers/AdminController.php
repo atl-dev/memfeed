@@ -107,9 +107,13 @@ class AdminController extends Controller
      **/
     public function approveComment($id)
     {
-        $comment = new App\Comment();
-        $comment->approve($id);
-        return Redirect::to('/manage/comments');
+        if(! is_int($id) ) {
+            throw new \InvalidArgumentException("ID has to be integer!");
+        }
+
+        $comment =App\Comment::find($id);
+        $comment->approve();
+        return Redirect::to('/admin/manage/comments');
     }
 
 
@@ -121,20 +125,14 @@ class AdminController extends Controller
      **/
     public function approveMem($id)
     {
-        $mem = new App\Mem();
-        $mem->approve($id);
-        return Redirect::to('/manage/mems');
-    }
+        if(! is_int($id) ) {
+            throw new \InvalidArgumentException("ID has to be integer!");
+        }
 
-    /**
-     * Display form 
-     *
-     * @return View
-     * @param String
-     **/
-    public function form($name)
-    {
-        return view('Admin.form_'.$name);
+
+        $mem = App\Mem::find($id);
+        $mem->approve();
+        return Redirect::to('/admin/manage/mems');
     }
 
     /**

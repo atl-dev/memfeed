@@ -28,13 +28,12 @@ class Mem extends Model
     /**
      * Change status of mem to approved.
      *
-     * @param Integer
+     * @param
      **/
-    public function approve($id)
+    public function approve()
     {
-        $mem = Mem::find($id);
-        $mem->approved = 'yes';
-        $mem->save();
+        $this->approved = 'yes';
+        $this->save();
     }
 
     
@@ -77,20 +76,19 @@ class Mem extends Model
      * Increese positive rate
      *
      * @return void
-     * @param Int 
+     * @param  
      **/
     
-    public function rateUp($id)
+    public function rateUp()
     {
         $rates = new Rate();
-        if(Auth::check() and !$rates->userHasRatedMem($id)) {
-           $mem = Mem::find($id);
-           $mem->plus = intval($mam->plus,10);
-           $mem->plus += 1;
-           $mem->save();
+        if(Auth::check() and !$rates->userHasRatedMem($this->id)) {
+           $this->plus = intval($mam->plus,10);
+           $this->plus += 1;
+           $this->save();
            $rate = Rate::create([
                 'user_id' => Auth::user()->id,
-                'mem_id' => $id,
+                'mem_id' => $this->id,
             ]);
         }
     }
@@ -99,35 +97,23 @@ class Mem extends Model
      * Increments negative rate
      *
      * @return void
-     * @param Int 
+     * @param  
      **/
     
-    public function rateDown($id)
+    public function rateDown()
     {
         $rates = new Rate();
-        if(Auth::check() and !$rates->userHasRatedMem($id)) {
-           $mem = Mem::find($id);
-           $mem->minus = intval($mam->minus,10);
-           $mem->minus += 1;
-           $mem->save();
+        if(Auth::check() and !$rates->userHasRatedMem($this->id)) {
+           $this->minus = intval($mam->minus,10);
+           $this->minus += 1;
+           $this->save();
            $rate = Rate::create([
                 'user_id' => Auth::user()->id,
-                'mem_id' => $id,
+                'mem_id' => $this->id,
             ]);
        }
     }
 
-    /**
-     * Delete Mem 
-     *
-     * @return void
-     * @param  Int 
-     **/
-    public function remove($id)
-    {
-        $mem = Mem::find($id);
-        $mem->delete();
-    }
 
     /**
      * Relation to users table
@@ -141,10 +127,10 @@ class Mem extends Model
     }
 
     /**
-     * undocumented function
+     * Relation to comments 
      *
      * @return void
-     * @author 
+     *  
      **/
     public function comments()
     {
